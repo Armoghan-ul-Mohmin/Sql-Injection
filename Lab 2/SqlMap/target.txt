@@ -1,1 +1,0 @@
-https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net/login (GET)  # /usr/bin/sqlmap -u https://0a85007504dbef82c0834c4100e6004b.web-security-academy.net/login -t -File-write=Lab2
