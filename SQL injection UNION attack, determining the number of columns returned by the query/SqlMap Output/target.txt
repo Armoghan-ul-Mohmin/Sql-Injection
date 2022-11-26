@@ -1,0 +1,1 @@
+https://0a0d001804d89a9fc06a72a600530062.web-security-academy.net/ (GET)  # /usr/bin/sqlmap -u https://0a0d001804d89a9fc06a72a600530062.web-security-academy.net/ -t -File-write= Lab3

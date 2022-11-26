@@ -1,0 +1,372 @@
+HTTP request [#1]:
+GET / HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Host: 0a0d001804d89a9fc06a72a600530062.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#1] (200 OK):
+Content-Type: text/html; charset=utf-8
+Set-Cookie: session=PAQSqVcaLXGy2Uapk448Pa3gjR1IZCoc; Secure; HttpOnly; SameSite=None
+Connection: close
+Content-Length: 8688
+URI: https://0a0d001804d89a9fc06a72a600530062.web-security-academy.net:443/
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
+        <link href=/resources/css/labsEcommerce.css rel=stylesheet>
+        <title>SQL injection UNION attack, determining the number of columns returned by the query</title>
+    </head>
+    <body>
+            <script src="/resources/labheader/js/labHeader.js"></script>
+            <div id="academyLabHeader">
+    <section class='academyLabBanner'>
+        <div class=container>
+            <div class=logo></div>
+                <div class=title-container>
+                    <h2>SQL injection UNION attack, determining the number of columns returned by the query</h2>
+                    <a class=link-back href='https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns'>
+                        Back\xa0to\xa0lab\xa0description\xa0
+                        <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>
+                            <g>
+                                <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>
+                                <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class='widgetcontainer-lab-status is-notsolved'>
+                    <span>LAB</span>
+                    <p>Not solved</p>
+                    <span class=lab-status-icon></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        <div theme="ecommerce">
+            <section class="maincontainer">
+                <div class="container">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href=/>Home</a><p>|</p>
+                            <a href="/my-account">My account</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <section class="ecoms-pageheader">
+                        <img src="/resources/images/shop.svg">
+                    </section>
+                    <section class="search-filters">
+                        <label>Refine your search:</label>
+                        <a href="/">All</a>
+                        <a href="/filter?category=Corporate+gifts">Corporate gifts</a>
+                        <a href="/filter?category=Food+&+Drink">Food & Drink</a>
+                        <a href="/filter?category=Gifts">Gifts</a>
+                        <a href="/filter?category=Tech+gifts">Tech gifts</a>
+                        <a href="/filter?category=Toys+&+Games">Toys & Games</a>
+                    </section>
+                    <table class="is-table-numbers">
+                        <tbody>
+                        <tr>
+                            <th>Caution Sign</th>
+                            <td>$69.46</td>
+                            <td><a class="button is-small" href="/product?productId=1">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Folding Gadgets</th>
+                            <td>$47.48</td>
+                            <td><a class="button is-small" href="/product?productId=6">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>The Giant Enter Key</th>
+                            <td>$28.20</td>
+                            <td><a class="button is-small" href="/product?productId=11">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Com-Tool</th>
+                            <td>$73.28</td>
+                            <td><a class="button is-small" href="/product?productId=16">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Sprout More Brain Power</th>
+                            <td>$53.81</td>
+                            <td><a class="button is-small" href="/product?productId=4">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Hydrated Crackers</th>
+                            <td>$3.16</td>
+                            <td><a class="button is-small" href="/product?productId=9">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Eggtastic, Fun, Food Eggcessories</th>
+                            <td>$24.56</td>
+                            <td><a class="button is-small" href="/product?productId=14">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>BBQ Suitcase</th>
+                            <td>$80.63</td>
+                            <td><a class="button is-small" href="/product?productId=19">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>High-End Gift Wrapping</th>
+                            <td>$79.31</td>
+                            <td><a class="button is-small" href="/product?productId=5">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Conversation Controlling Lemon</th>
+                            <td>$61.59</td>
+                            <td><a class="button is-small" href="/product?productId=10">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Snow Delivered To Your Door</th>
+                            <td>$97.02</td>
+                            <td><a class="button is-small" href="/product?productId=15">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Couple&apos;s Umbrella</th>
+                            <td>$28.99</td>
+                            <td><a class="button is-small" href="/product?productId=20">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Robot Home Security Buddy</th>
+                            <td>$4.74</td>
+                            <td><a class="button is-small" href="/product?productId=2">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Lightbulb Moments</th>
+                            <td>$57.56</td>
+                            <td><a class="button is-small" href="/product?productId=7">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Beat the Vacation Traffic</th>
+                            <td>$85.85</td>
+                            <td><a class="button is-small" href="/product?productId=12">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>3D Voice Assistants</th>
+                            <td>$69.16</td>
+                            <td><a class="button is-small" href="/product?productId=17">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>What Do You Meme?</th>
+                            <td>$15.94</td>
+                            <td><a class="button is-small" href="/product?productId=3">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Hexbug Battleground Tarantula Double Pack</th>
+                            <td>$7.04</td>
+                            <td><a class="button is-small" href="/product?productId=8">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Sarcastic 9 Ball</th>
+                            <td>$83.85</td>
+                            <td><a class="button is-small" href="/product?productId=13">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Poo Head - It's not just an insult anymore.</th>
+                            <td>$2.54</td>
+                            <td><a class="button is-small" href="/product?productId=18">View details</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+
+
+############################################################################
+
+HTTP request [#2]:
+GET / HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Cookie: session=PAQSqVcaLXGy2Uapk448Pa3gjR1IZCoc
+Host: 0a0d001804d89a9fc06a72a600530062.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#2] (200 OK):
+Content-Type: text/html; charset=utf-8
+Connection: close
+Content-Length: 8688
+URI: https://0a0d001804d89a9fc06a72a600530062.web-security-academy.net:443/
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
+        <link href=/resources/css/labsEcommerce.css rel=stylesheet>
+        <title>SQL injection UNION attack, determining the number of columns returned by the query</title>
+    </head>
+    <body>
+            <script src="/resources/labheader/js/labHeader.js"></script>
+            <div id="academyLabHeader">
+    <section class='academyLabBanner'>
+        <div class=container>
+            <div class=logo></div>
+                <div class=title-container>
+                    <h2>SQL injection UNION attack, determining the number of columns returned by the query</h2>
+                    <a class=link-back href='https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns'>
+                        Back\xa0to\xa0lab\xa0description\xa0
+                        <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>
+                            <g>
+                                <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>
+                                <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class='widgetcontainer-lab-status is-notsolved'>
+                    <span>LAB</span>
+                    <p>Not solved</p>
+                    <span class=lab-status-icon></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        <div theme="ecommerce">
+            <section class="maincontainer">
+                <div class="container">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href=/>Home</a><p>|</p>
+                            <a href="/my-account">My account</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <section class="ecoms-pageheader">
+                        <img src="/resources/images/shop.svg">
+                    </section>
+                    <section class="search-filters">
+                        <label>Refine your search:</label>
+                        <a href="/">All</a>
+                        <a href="/filter?category=Corporate+gifts">Corporate gifts</a>
+                        <a href="/filter?category=Food+&+Drink">Food & Drink</a>
+                        <a href="/filter?category=Gifts">Gifts</a>
+                        <a href="/filter?category=Tech+gifts">Tech gifts</a>
+                        <a href="/filter?category=Toys+&+Games">Toys & Games</a>
+                    </section>
+                    <table class="is-table-numbers">
+                        <tbody>
+                        <tr>
+                            <th>Caution Sign</th>
+                            <td>$69.46</td>
+                            <td><a class="button is-small" href="/product?productId=1">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Folding Gadgets</th>
+                            <td>$47.48</td>
+                            <td><a class="button is-small" href="/product?productId=6">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>The Giant Enter Key</th>
+                            <td>$28.20</td>
+                            <td><a class="button is-small" href="/product?productId=11">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Com-Tool</th>
+                            <td>$73.28</td>
+                            <td><a class="button is-small" href="/product?productId=16">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Sprout More Brain Power</th>
+                            <td>$53.81</td>
+                            <td><a class="button is-small" href="/product?productId=4">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Hydrated Crackers</th>
+                            <td>$3.16</td>
+                            <td><a class="button is-small" href="/product?productId=9">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Eggtastic, Fun, Food Eggcessories</th>
+                            <td>$24.56</td>
+                            <td><a class="button is-small" href="/product?productId=14">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>BBQ Suitcase</th>
+                            <td>$80.63</td>
+                            <td><a class="button is-small" href="/product?productId=19">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>High-End Gift Wrapping</th>
+                            <td>$79.31</td>
+                            <td><a class="button is-small" href="/product?productId=5">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Conversation Controlling Lemon</th>
+                            <td>$61.59</td>
+                            <td><a class="button is-small" href="/product?productId=10">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Snow Delivered To Your Door</th>
+                            <td>$97.02</td>
+                            <td><a class="button is-small" href="/product?productId=15">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Couple&apos;s Umbrella</th>
+                            <td>$28.99</td>
+                            <td><a class="button is-small" href="/product?productId=20">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Robot Home Security Buddy</th>
+                            <td>$4.74</td>
+                            <td><a class="button is-small" href="/product?productId=2">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Lightbulb Moments</th>
+                            <td>$57.56</td>
+                            <td><a class="button is-small" href="/product?productId=7">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Beat the Vacation Traffic</th>
+                            <td>$85.85</td>
+                            <td><a class="button is-small" href="/product?productId=12">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>3D Voice Assistants</th>
+                            <td>$69.16</td>
+                            <td><a class="button is-small" href="/product?productId=17">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>What Do You Meme?</th>
+                            <td>$15.94</td>
+                            <td><a class="button is-small" href="/product?productId=3">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Hexbug Battleground Tarantula Double Pack</th>
+                            <td>$7.04</td>
+                            <td><a class="button is-small" href="/product?productId=8">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Sarcastic 9 Ball</th>
+                            <td>$83.85</td>
+                            <td><a class="button is-small" href="/product?productId=13">View details</a></td>
+                        </tr>
+                        <tr>
+                            <th>Poo Head - It's not just an insult anymore.</th>
+                            <td>$2.54</td>
+                            <td><a class="button is-small" href="/product?productId=18">View details</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+
+
+############################################################################
+
