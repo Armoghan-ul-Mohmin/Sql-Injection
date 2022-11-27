@@ -1,0 +1,32 @@
+Sql Injection
+===============
+
+> Armoghan-ul-MOhmin | November 26, 2022
+
+--------------------------
+Lab no:7
+url:https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle
+
+Lab url: https://0a7900a104bbef7dc05a0805008b00a8.web-security-academy.net/
+
+Goal: Display the database version string
+
+--------------------------
+
+Analysis:
+==========
+1. 1. Check If the Webapp is vulnerabil or not.
+2. Select Gifts category. 
+3. Open Burp Suite and capture http traffic.
+4. Then send the http request to repeater.
+5. Edit the request and send through repeater. 
+6. Try '+UNION+SELECT+BANNER,+NULL+FROM+v$version-- For Oracle Database only (Solved)
+
+
+Solution:
+=========
+1. Use Burp Suite to intercept and modify the request that sets the product category filter.
+2. Determine the number of columns that are being returned by the query and which columns contain text data. Verify that the query is returning two columns, both of which contain text, using a payload like the following in the category parameter:
+					'+UNION+SELECT+'abc','def'+FROM+dual--
+3. Use the following payload to display the database version:
+					'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
