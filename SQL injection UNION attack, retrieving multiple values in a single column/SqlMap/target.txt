@@ -1,0 +1,1 @@
+https://0aa1003e0332f689c01c04c600860050.web-security-academy.net/filter?category=Food+%26+Drink (GET)  # /usr/bin/sqlmap -u https://0aa1003e0332f689c01c04c600860050.web-security-academy.net/filter?category=Food+%26+Drink -t -File-write= Lab6

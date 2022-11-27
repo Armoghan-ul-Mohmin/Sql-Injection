@@ -1,0 +1,76 @@
+HTTP request [#1]:
+GET / HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Host: 0a7700a303913388c0608ed2007d0005.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#1] (504 Gateway Timeout):
+Content-Type: text/html; charset=utf-8
+Connection: close
+Content-Length: 197
+URI: https://0a7700a303913388c0608ed2007d0005.web-security-academy.net:443/
+
+<html><head><title>Server Error: Gateway Timeout</title></head><body><h1>Server Error: Gateway Timeout (0) connecting to 0a7700a303913388c0608ed2007d0005.web-security-academy.net</h1></body></html>
+
+############################################################################
+
+HTTP request [#2]:
+GET / HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Host: 0a7700a303913388c0608ed2007d0005.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#2] (504 Gateway Timeout):
+Content-Type: text/html; charset=utf-8
+Connection: close
+Content-Length: 197
+URI: https://0a7700a303913388c0608ed2007d0005.web-security-academy.net:443/
+
+<html><head><title>Server Error: Gateway Timeout</title></head><body><h1>Server Error: Gateway Timeout (0) connecting to 0a7700a303913388c0608ed2007d0005.web-security-academy.net</h1></body></html>
+
+############################################################################
+
+HTTP request [#3]:
+GET / HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Host: 0a7700a303913388c0608ed2007d0005.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#3] (504 Gateway Timeout):
+Content-Type: text/html; charset=utf-8
+Connection: close
+Content-Length: 197
+URI: https://0a7700a303913388c0608ed2007d0005.web-security-academy.net:443/
+
+<html><head><title>Server Error: Gateway Timeout</title></head><body><h1>Server Error: Gateway Timeout (0) connecting to 0a7700a303913388c0608ed2007d0005.web-security-academy.net</h1></body></html>
+
+############################################################################
+
+HTTP request [#4]:
+GET / HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.11#stable (https://sqlmap.org)
+Host: 0a7700a303913388c0608ed2007d0005.web-security-academy.net
+Accept: */*
+Accept-encoding: gzip,deflate
+Connection: close
+
+HTTP response [#4] (504 Gateway Timeout):
+Content-Type: text/html; charset=utf-8
+Connection: close
+Content-Length: 197
+URI: https://0a7700a303913388c0608ed2007d0005.web-security-academy.net:443/
+
+<html><head><title>Server Error: Gateway Timeout</title></head><body><h1>Server Error: Gateway Timeout (0) connecting to 0a7700a303913388c0608ed2007d0005.web-security-academy.net</h1></body></html>
+
+############################################################################
+

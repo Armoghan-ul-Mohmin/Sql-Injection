@@ -1,0 +1,34 @@
+SQL Injection
+===============
+
+> Armoghan-ul-MOhmin | November 26, 2022
+
+--------------------------
+Lab no:4
+url:https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text
+
+Lab url: https://0a7700a303913388c0608ed2007d0005.web-security-academy.net/
+
+Goal:  Perform an SQL injection UNION attack that returns an additional row containing the value provided
+
+--------------------------
+
+Analysis:
+==========
+1. Check if the webapp contains sql injection vulnerability
+2. Go to Food & Drink category.
+3. Using FoxyProxy capture http request in Burp Suite.
+4. Check for number of columns using '+UNION+SELECT+NULL,NULL,NULL-- methord
+5. now replace NULL with any string enclosed in quation marks and analize output 
+6. Now try '+UNION+SELECT+NULL,'YBahsu',NULL-- (Solved)
+
+
+Solution:
+=========
+1. Use Burp Suite to intercept and modify the request that sets the product category filter. 
+2. Determine the number of columns that are being returned by the query. Verify that the query is returning three columns, using the following payload in the category parameter:
+                            '+UNION+SELECT+NULL,NULL,NULL--
+3. Try replacing each null with the random value provided by the lab, for example:
+                            '+UNION+SELECT+'abcdef',NULL,NULL--
+4. If an error occurs, move on to the next null and try that instead
+

