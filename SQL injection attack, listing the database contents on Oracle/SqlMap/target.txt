@@ -1,0 +1,1 @@
+https://0a28007c033fe77ac0fc496b00a00040.web-security-academy.net/filter?category=Gifts (GET)  # /usr/bin/sqlmap -u https://0a28007c033fe77ac0fc496b00a00040.web-security-academy.net/filter?category=Gifts -t -File-write= Lab10

@@ -1,0 +1,1 @@
+https://0a4a002704482e18c0873a3100fb0080.web-security-academy.net/filter?category=Pets (GET)  # /usr/bin/sqlmap -u https://0a4a002704482e18c0873a3100fb0080.web-security-academy.net/filter?category=Pets -t -File-write= Lab11

